@@ -43,11 +43,12 @@ const VideoListItem = (props: VideoListItemProps) => {
       </View>
       <View style={styles.titleRow}>
         <Image style={styles.avatar} source={{ uri: video.user.image }} />
+
         <View style={styles.midleContainer}>
           <Text style={styles.title}>{video.title}</Text>
           <Text style={styles.subTitle}>{video.user.name} | {viewsString} | {video.createdAt}</Text>
-          
         </View>
+        
         <Entypo name="dots-three-vertical" size={18} color="white"/>
       </View>
     </View>
