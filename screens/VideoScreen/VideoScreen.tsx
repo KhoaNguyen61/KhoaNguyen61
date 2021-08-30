@@ -26,7 +26,7 @@ const VideoScreen = () => {
   }, []);
   const snapPoints = useMemo(() => ['50%', '100%'], []);
 
-  //const handleSheetChanges = useCallback((index: number) => {console.log('handleSheetChanges', index);  }, []);
+  const handleSheetChanges = useCallback((index: number) => {console.log('handleSheetChanges', index);  }, []);
 
 
 
@@ -34,7 +34,6 @@ const VideoScreen = () => {
     <View style={{ backgroundColor: '#2d2d2e', flex: 1 }}>
       {/* Video Player */}
       <VideoPlayer videoURI={video.videoUrl} thumbnailURI={video.thumbnail}/>
-      {/*<Image style={styles.videoPlayer} source={{ uri: video.thumbnail }} />*/}
     
       <View style={{flex: 1}}>
         {/* Video Info */}
@@ -112,12 +111,13 @@ const VideoScreen = () => {
         <BottomSheetModal
           ref={commentsSheetRef}
           snapPoints={snapPoints}
-          index={0}
-          //onChange={handleSheetChanges}
+          index={1}
+          onChange={handleSheetChanges}
           //backgroundComponent={({style}) => <View style={[style, {backgroundColor: '#00ffff'}]}/>}
           >
           <VideoComments />
         </BottomSheetModal>
+        
         {/* Recommended Videos */}
         
       </View>
@@ -130,7 +130,7 @@ const VideoScreenWithRecommendation = () => {
   return (
     <SafeAreaView style={{ backgroundColor: '#2d2d2e', flex: 1 }}>
       <BottomSheetModalProvider>
-        <VideoScreen />
+        {/* <VideoScreen /> */}
           <FlatList
           data={videos}
           renderItem={({ item }) => <VideoListItem video={item} />}

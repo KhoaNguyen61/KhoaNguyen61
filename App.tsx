@@ -1,6 +1,6 @@
-import 'react-native-gesture-handler';
+
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import * as React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import useCachedResources from './hooks/useCachedResources';
@@ -18,9 +18,10 @@ export default function App() {
   } else {
     return (
       <SafeAreaProvider>
-        {/* <Navigation colorScheme={'dark'} /> */}
-        <VideoScreen />
+        <Navigation colorScheme={'dark'} />
+        {/* <VideoScreen /> */}
         <StatusBar />
+        
       </SafeAreaProvider>
     );
   }
